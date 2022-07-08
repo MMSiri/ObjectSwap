@@ -12,7 +12,7 @@ namespace ObjectSwap
 
             while (true)
             {
-                Console.WriteLine("Press 1 for Lloyd | 2 for Lucinda | 3 to swap");
+                Console.WriteLine("Press 1 for Lloyd | 2 for Lucinda | 3 to swap | 4 to send Lloyd a Message from Lucinda");
 
                 string input = Console.ReadLine();
                 if (!int.TryParse(input, out int whoAmIChoice))
@@ -45,9 +45,15 @@ namespace ObjectSwap
                         Console.WriteLine("References successfully swapped.");
                         Console.Write('\n');
                     }
-                    if (whoAmIChoice > 3)
+                    if (whoAmIChoice == 4)
                     {
-                        Console.WriteLine("A number between 1 and 3 will do just fine, please.");
+                        Console.WriteLine($"You pressed {whoAmIChoice}");
+                        lucinda.SpeakTo(lloyd, "Ello' ello', me ol' chap LLoyd!!!");
+                        Console.Write('\n');
+                    }
+                    if (whoAmIChoice > 4)
+                    {
+                        Console.WriteLine("A number between 1 and 4 will do just fine, please.");
                         Console.Write('\n');
                     }
                     if (QuitConsole(true)) return;
